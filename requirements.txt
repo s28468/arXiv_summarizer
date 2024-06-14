@@ -1,0 +1,8 @@
+torch
+transformers
+langchain
+reportlab
+llmsherpa
+bs4
+pypdf
+pymupdf
