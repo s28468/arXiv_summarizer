@@ -166,9 +166,9 @@ def summarize_text(text, tokenizer, model):
         inputs_batch = torch.unsqueeze(inputs_batch, 0)
         inputs_batch_lst.append(inputs_batch)
         chunk_start = chunk_end + 1
-        chunk_end = min(chunk_start + tokenizer.model_max_length, len(inputs_no_trunc['input_ids'][0]))
+        chunk_end = min(chunk_start + 1024, len(inputs_no_trunc['input_ids'][0]))
 
-    summary_ids_lst = [model.generate(inputs, num_beams=4, max_length=1023, early_stopping=True) for inputs in inputs_batch_lst]
+    summary_ids_lst = [model.generate(inputs, num_beams=4, max_length=1024, early_stopping=True) for inputs in inputs_batch_lst]
 
     summary_batch_lst = []
     for summary_id in summary_ids_lst:
@@ -202,7 +202,7 @@ def create_pdf_report(headers, text, tokenizer, model, size, images_folder='imag
     style = styles['Normal']
     elements = []
 
-    for header in range(len(headers) - 1):
+    for header in range(len(headers) - 16):
         startHeader = headers[header]
         endHeader = headers[header + 1]
 

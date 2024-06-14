@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-from pymongo.errors import ConnectionError
+from pymongo.errors import PyMongoError
 class MongoDBSaver:
    def __init__(self, uri, db_name, collection_name):
        self.uri = uri
@@ -15,10 +15,10 @@ class MongoDBSaver:
            self.db = self.client[self.db_name]
            self.collection = self.db[self.collection_name]
            print("Connected to MongoDB successfully")
-       except ConnectionError as e:
+       except PyMongoError as e:
            print(f"Could not connect to MongoDB: {e}")
    def save_data(self, data):
-       if not self.collection:
+       if self.collection is None:
            print("No collection available to insert data")
            return
        try:

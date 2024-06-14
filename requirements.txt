@@ -6,3 +6,4 @@ llmsherpa
 bs4
 pypdf
 pymupdf
+pymongo
