@@ -1,9 +1,9 @@
 # Overview
-PDF-to-PDF arXiv document summarisation program with images and headers extraction. Example, the well-known article "Attention is all you need", document - [arXiv_doc](https://github.com/KyryloTurchyn/arXiv_summarizer/blob/main/arXiv_doc.pdf) and its summarisation [summary](https://github.com/KyryloTurchyn/arXiv_summarizer/blob/main/summary.pdf).
+PDF-to-PDF arXiv document summarisation program with images and headers extraction. Example, the well-known article "Attention is all you need", document - [arXiv_doc](https://github.com/KyryloTurchyn/arXiv_summarizer/blob/main/arXiv_doc.pdf) and its summarisation [summary](https://github.com/KyryloTurchyn/arXiv_summarizer/blob/main/summary.pdf) and saves it in MongoDB.
 
 # Installation 
 ```
-git clone https://github.com/KyryloTurchyn/arXiv_summarizer
+git clone https://github.com/s28468/arXiv_summarizer
 pip install -r requirements.txt
 ```
 To run script:
